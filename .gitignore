@@ -1,0 +1,49 @@
+# Node.js
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# Debugging
+npm-debug.log*
+
+# Environment files
+.env
+
+# Dependency directories
+jspm_packages/
+bower_components/
+
+# Built files
+dist/
+build/
+
+# Misc
+.DS_Store
+Thumbs.db
+
+# OS generated files
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+Icon?
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs_analysis.dat
+*.ntvs_testresults
+ipch/
+.svscode-test/
+*.tgz
+.nyc_output/
+.coverage/
+.yarn/
+
+# Test files
+/__tests__/
+/test/
+/tests/
+test.js
