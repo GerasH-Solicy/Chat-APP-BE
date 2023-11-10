@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "echo build",
-    "start": "babel-node index.js"
+    "dev": "node index.js"
   },
   "author": "",
   "license": "ISC",
@@ -21,11 +20,5 @@
   "optionalDependencies": {
     "bufferutil": "^4.0.8",
     "utf-8-validate": "^5.0.10"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.15.5",
-    "@babel/cli": "^7.15.0",
-    "@babel/preset-env": "^7.15.6",
-    "babel-node": "^0.0.1-security"
   }
 }

@@ -19,7 +19,8 @@ const io = new Server(server, {
   },
 });
 
-const mongoURI = "mongodb://localhost:27017";
+const mongoURI =
+  "mongodb+srv://root:geras2004.@cluster0.p7ntirq.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose.connect(mongoURI);
 

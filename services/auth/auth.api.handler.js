@@ -82,15 +82,21 @@ const checkToken = async (req, res) => {
 
     let userId = null;
 
+    let jwtError = false;
+
     jwt.verify(token, jwtKey, (err, decoded) => {
       if (err) {
-        return res.send({
-          success: false,
-          message: "Failed to authenticate token.",
-        });
+        jwtError = true;
       }
       userId = decoded.userId;
     });
+
+    if (jwtError) {
+      return res.send({
+        success: false,
+        message: "Failed to authenticate token.",
+      });
+    }
 
     if (!userId) {
       return res.send({ success: false, message: "No `userId` under token." });
