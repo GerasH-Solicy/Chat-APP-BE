@@ -12,4 +12,20 @@ const getChatMessages = async (req, res) => {
   }
 };
 
-module.exports = {getChatMessages}
+const deleteMessage = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    if (!id) {
+      return res.send({ success: false, message: "`id` is not provided." });
+    }
+
+    await Message.findByIdAndDelete(id);
+
+    res.send({ success: true });
+  } catch (err) {
+    res.send({ success: false, message: err.message });
+  }
+};
+
+module.exports = { getChatMessages, deleteMessage };
