@@ -46,12 +46,18 @@ io.on("connection", (socket) => {
   console.log("A client is connected");
 
   socket.on("joinChannel", (channelName) => {
-        socket.join(channelName);
+    socket.join(channelName);
   });
 
   socket.on("sendMessage", async (channelName, message) => {
     const { data } = await sendMessage(message);
     io.to(channelName).emit("messageRecive", data);
+  });
+
+  socket.on("userTyping", async (nickname, chatId) => {
+    console.log("this case is working ====", nickname, chatId);
+    const data = { nickname, chatId };
+    io.to(chatId).emit("userTypingRecive", data);
   });
 
   socket.on("deleteMessage", async (channelName, id) => {
